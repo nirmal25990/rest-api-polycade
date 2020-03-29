@@ -5,7 +5,7 @@
 	"scripts": {
 		"lint": "eslint src/index.js",
 		"start": "babel-node src/index.js",
-		"test": "jest",
+		"test": "jest --verbose",
 		"watch": "nodemon --exec babel-node --watch src/index.js",
 		"watch-test": "jest --watch"
 	},
@@ -27,7 +27,8 @@
 		"eslint": "^6.8.0",
 		"jest": "^25.1.0",
 		"nodemon": "^2.0.2",
-		"sequelize-cli": "^5.5.1"
+		"sequelize-cli": "^5.5.1",
+		"supertest": "^4.0.2"
 	},
 	"jest": {
 		"testEnvironment": "node",
