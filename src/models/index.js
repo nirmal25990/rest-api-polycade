@@ -32,33 +32,33 @@ Object.keys(db).forEach(modelName => {
 });
 
 //sequelize sync
-//  sequelize.sync();
+ sequelize.sync();
 //sequelize force sync
-sequelize.sync({ force: true })
-  .then(async () => {
-    console.log(`Database & tables created!`)
-    const Price = require('../models').price;
-    await Price.create({
-      "name": "Default",
-      "pricing": [
-        {
-          "price": 3,
-          "name": "10 minutes",
-          "value": 10
-        },
-        {
-          "price": 5,
-          "name": "20 minutes",
-          "value": 20
-        },
-        {
-          "price": 15,
-          "name": "60 minutes",
-          "value": 60
-        }
-      ]
-    })
-  })
+// sequelize.sync({ force: true })
+//   .then(async () => {
+//     console.log(`Database & tables created!`)
+//     const Price = require('../models').Price;
+//     await Price.create({
+//       "name": "Default",
+//       "pricing": [
+//         {
+//           "price": 3,
+//           "name": "10 minutes",
+//           "value": 10
+//         },
+//         {
+//           "price": 5,
+//           "name": "20 minutes",
+//           "value": 20
+//         },
+//         {
+//           "price": 15,
+//           "name": "60 minutes",
+//           "value": 60
+//         }
+//       ]
+//     })
+//   })
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 

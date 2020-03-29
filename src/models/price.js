@@ -4,7 +4,7 @@ const default_pricing = ["{\"price\":3,\"name\":\"10 minutes\",\"value\":10}","{
 
 //model collection price
 module.exports = (sequelize, DataTypes) => {
-    const price = sequelize.define('price', {
+    const Price = sequelize.define('Price', {
         id: {
             type: DataTypes.UUID,
             defaultValue: DataTypes.UUIDV1,
@@ -16,8 +16,8 @@ module.exports = (sequelize, DataTypes) => {
             defaultValue: default_pricing
         },
     }, {});
-    price.associate = function (models) {
-        price.hasMany(models.machine);
+    Price.associate = function (models) {
+        Price.hasMany(models.Machine, { as: 'Price', foreignKey: 'priceId', sourceKey: 'id'});
     };
-    return price;
+    return Price;
 };
